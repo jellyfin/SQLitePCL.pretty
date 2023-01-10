@@ -683,14 +683,14 @@ namespace SQLitePCL.pretty.Tests
                 db.Execute("CREATE TABLE foo (rowid integer primary key asc autoincrement, x int not null);");
 
                 var metadata = db.GetTableColumnMetadata("main", "foo", "x");
-                Assert.Equal("int", metadata.DeclaredType);
+                Assert.Equal("INT", metadata.DeclaredType);
                 Assert.Equal("BINARY", metadata.CollationSequence);
                 Assert.True(metadata.HasNotNullConstraint);
                 Assert.False(metadata.IsPrimaryKeyPart);
                 Assert.False(metadata.IsAutoIncrement);
 
                 metadata = db.GetTableColumnMetadata("main", "foo", "rowid");
-                Assert.Equal("integer", metadata.DeclaredType);
+                Assert.Equal("INTEGER", metadata.DeclaredType);
                 Assert.Equal("BINARY", metadata.CollationSequence);
                 Assert.False(metadata.HasNotNullConstraint);
                 Assert.True(metadata.IsPrimaryKeyPart);

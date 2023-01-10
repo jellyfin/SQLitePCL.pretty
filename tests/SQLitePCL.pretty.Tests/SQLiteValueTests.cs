@@ -45,13 +45,13 @@ namespace SQLitePCL.pretty.Tests
         public void TestToSQLiteValueExtensions()
         {
             const short testShort = 2;
-            Assert.Equal(testShort.ToSQLiteValue().ToShort(), testShort);
+            Assert.Equal(testShort, testShort.ToSQLiteValue().ToShort());
 
             const byte testByte = 2;
-            Assert.Equal(testByte.ToSQLiteValue().ToByte(), testByte);
+            Assert.Equal(testByte, testByte.ToSQLiteValue().ToByte());
 
             const float testFloat = 2.0f;
-            Assert.Equal(testFloat.ToSQLiteValue().ToFloat(), testFloat);
+            Assert.Equal(testFloat, testFloat.ToSQLiteValue().ToFloat());
 
             TimeSpan testTimeSpan = new TimeSpan(100);
             Assert.Equal(testTimeSpan.ToSQLiteValue().ToTimeSpan(), testTimeSpan);
@@ -69,10 +69,10 @@ namespace SQLitePCL.pretty.Tests
             Assert.Equal(testGuid.ToSQLiteValue().ToGuid(), testGuid);
 
             const ushort testUShort = 1;
-            Assert.Equal(testUShort.ToSQLiteValue().ToUInt16(), testUShort);
+            Assert.Equal(testUShort, testUShort.ToSQLiteValue().ToUInt16());
 
             const sbyte testSByte = 1;
-            Assert.Equal(testSByte.ToSQLiteValue().ToSByte(), testSByte);
+            Assert.Equal(testSByte, testSByte.ToSQLiteValue().ToSByte());
 
             Uri uri = new Uri("http://www.example.com/path/to/resource?querystring#fragment");
             Assert.Equal(uri.ToSQLiteValue().ToUri(), uri);
